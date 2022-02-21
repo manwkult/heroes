@@ -1,0 +1,115 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Heroes",
+		"_postman_id": "e1cffd72-5437-3c18-9e77-80994098c4dc",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get All",
+			"request": {
+				"url": "localhost:8080/api/v1/heroes",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get All by Name",
+			"request": {
+				"url": {
+					"raw": "localhost:8080/api/v1/heroes?name=uper",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"heroes"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "uper",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get by Id",
+			"request": {
+				"url": "localhost:8080/api/v1/heroes/1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Save",
+			"request": {
+				"url": "localhost:8080/api/v1/heroes",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Hulk\",\n\t\"power\": \"Fuerza\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Update",
+			"request": {
+				"url": "localhost:8080/api/v1/heroes",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"id\": 1,\n\t\"name\": \"Super Man - Black\",\n\t\"power\": \"All\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Delete by Id",
+			"request": {
+				"url": "localhost:8080/api/v1/heroes/1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
