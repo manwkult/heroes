@@ -19,8 +19,8 @@ public class HeroesHandler {
 
     public Mono<ServerResponse> getAll(ServerRequest serverRequest) {
         return serverRequest.queryParam("name")
-                .map(name -> heroesUseCase.getByNameContains(name))
-                .orElseGet(() -> heroesUseCase.getAll())
+                .map(heroesUseCase::getByNameContains)
+                .orElseGet(heroesUseCase::getAll)
                 .flatMap(this::buildResponse);
     }
 
